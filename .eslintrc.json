@@ -104,9 +104,11 @@
         "js": "never",
         "jsx": "never",
         "ts": "never",
-        "tsx": "never"
+        "tsx": "never",
+        "": "never"
       }
     ],
+    "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": "off",
     "import/order": "off",
     "import/prefer-default-export": "off",
@@ -175,7 +177,7 @@
     "import/resolver": {
       "babel-module": {
         "alias": "paths",
-        "extensions": [".native.ts", ".native.tsx", ".ts", ".tsx"]
+        "extensions": [".ts", ".tsx"]
       }
     },
     "react": {
@@ -183,4 +185,3 @@
     }
   }
 }
-
