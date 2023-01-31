@@ -41,12 +41,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "simple-import-sort",
-    "restrict-imports"
-  ],
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort", "restrict-imports", "sort-keys"],
   "rules": {
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/ban-types": [
@@ -122,12 +117,7 @@
     ],
     "no-empty-function": "off",
     "no-restricted-exports": "off",
-    "no-restricted-syntax": [
-      "error",
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement"
-    ],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
     "no-shadow": "off",
     "no-tabs": "off",
     "no-underscore-dangle": "off",
@@ -171,7 +161,7 @@
     "simple-import-sort/imports": "error",
     "sort-imports": "off",
     "react/react-in-jsx-scope": "off",
-    "react/button-has-type": "off"
+    "sort-keys/sort-keys-fix": "warn"
   },
   "settings": {
     "import/resolver": {

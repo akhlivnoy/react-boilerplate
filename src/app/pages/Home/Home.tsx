@@ -1,1 +1,5 @@
-export const HomePage: React.ComponentType = () => <div>Home Page</div>;
+export const HomePage: React.ComponentType = () => (
+  <div>
+    <p>Home Page</p>
+  </div>
+);
