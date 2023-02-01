@@ -12,21 +12,21 @@
     [
       "module-resolver",
       {
-        "root": "./src/app",
+        "root": "./src",
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"],
         "alias": {
-          "#assets": ["./assets"],
-          "#components": ["./components"],
-          "#constants": ["./constants"],
-          "#hooks": ["./hooks"],
-          "#models": ["./models"],
-          "#navigation": ["./navigation"],
-          "#redux": ["./redux"],
-          "#pages": ["./pages"],
-          "#services": ["./services"],
-          "#themes": ["./themes"],
-          "#types": ["./types"],
-          "#utils": ["./utils"]
+          "#assets": ["./app/assets"],
+          "#components": ["./app/components"],
+          "#constants": ["./app/constants"],
+          "#hooks": ["./app/hooks"],
+          "#models": ["./app/models"],
+          "#navigation": ["./app/navigation"],
+          "#redux": ["./app/redux"],
+          "#pages": ["./app/pages"],
+          "#services": ["./app/services"],
+          "#themes": ["./app/themes"],
+          "#types": ["./app/types"],
+          "#utils": ["./app/utils"]
         }
       }
     ],

@@ -161,7 +161,9 @@
     "simple-import-sort/imports": "error",
     "sort-imports": "off",
     "react/react-in-jsx-scope": "off",
-    "sort-keys/sort-keys-fix": "warn"
+    "sort-keys/sort-keys-fix": "off", // temporary solution
+    "react/button-has-type": "off",
+    "newline-before-return": "warn"
   },
   "settings": {
     "import/resolver": {

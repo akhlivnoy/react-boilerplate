@@ -4,8 +4,7 @@
     "scope": "typescriptreact",
     "prefix": "fac",
     "body": [
-      "export const ${1:$TM_FILENAME_BASE}$2: React.ComponentType = () => {",
-      "\tconsole.log('$TM_FILENAME_BASE component');\n",
+      "export const ${1:$TM_FILENAME_BASE}: React.ComponentType = () => {",
       "\treturn (",
       "\t\t<div>",
       "\t\t\t${0:<p>$TM_FILENAME_BASE</p>}",
@@ -55,5 +54,25 @@
     "prefix": "useMemo",
     "body": ["const ${1:name} = useMemo$2(() => {\t\n$0\n}, []);"],
     "description": "Hook useMemo"
+  },
+
+  //* Exports & Imports
+  "Destructured export": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "emd",
+    "body": ["export { $2 } from '$1';"],
+    "description": "Destructured export from module"
+  },
+  "Export all": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "ema",
+    "body": ["export * from '$1';"],
+    "description": "Export all from module"
+  },
+  "Destructured import": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "imd",
+    "body": ["import { $2 } from '$1';"],
+    "description": "Destructured import from module"
   }
 }
