@@ -1,8 +1,11 @@
-export const enum RootRouterPath {
+export const enum RouterPath {
   Root = '/',
+  Home = 'home',
+  Posts = 'posts',
+  About = 'about',
 }
 
 // TODO: Uncomment if needed
-// export const enum RootRouterParam {
+// export const enum RouterParam {
 //  Root = 'paramId',
 // }

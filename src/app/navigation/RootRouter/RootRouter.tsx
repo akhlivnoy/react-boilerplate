@@ -1,16 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { Layout } from '#components';
 import { HomePage } from '#pages';
 
-import { RootRouterPath } from './RootRouter.types';
+import { RouterPath } from './RootRouter.types';
 
 export const RootRouter: React.ComponentType = () => (
   <BrowserRouter>
     <Routes>
       <Route
-        element={<HomePage />}
-        path={RootRouterPath.Root}
-      />
+        element={<Layout />}
+        path={RouterPath.Root}
+      >
+        <Route
+          element={<HomePage />}
+          path={RouterPath.Home}
+        />
+      </Route>
     </Routes>
   </BrowserRouter>
 );

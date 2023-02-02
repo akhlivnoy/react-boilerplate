@@ -1,0 +1,27 @@
+{
+  "import": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "imp",
+    "body": ["import ${2:some} from '${1:module}'"]
+  },
+  "importDestructing": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "imd",
+    "body": ["import { ${2:some} } from '${1:module}'"]
+  },
+  "importReact": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "imr",
+    "body": ["import React from 'react'"]
+  },
+  "importAs": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "ima",
+    "body": ["import { ${2:some} as ${3:name} } from '${1:module}'"]
+  },
+  "importEverything": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "ime",
+    "body": ["import * as ${2:name} from '${1:module}'"]
+  }
+}

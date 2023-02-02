@@ -1,0 +1,22 @@
+{
+  "exportAs": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exa",
+    "body": ["export { ${2:second} as ${3:third} } from '${1:first}'"]
+  },
+  "exportDestructing": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exd",
+    "body": ["export { ${2:second} } from '${1:first}'"]
+  },
+  "exportEnum": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exe",
+    "body": ["export enum ${1:EnumName} {\n\t$0\n}"]
+  },
+  "exportConstEnum": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exce",
+    "body": ["export const enum ${1:EnumName} {\n\t$0\n}"]
+  }
+}
