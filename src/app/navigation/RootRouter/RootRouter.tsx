@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout } from '#components';
-import { HomePage } from '#pages';
+import { HomePage, NotFoundPage } from '#pages';
 
 import { RouterPath } from './RootRouter.types';
 
@@ -13,10 +13,14 @@ export const RootRouter: React.ComponentType = () => (
         path={RouterPath.Root}
       >
         <Route
+          index
           element={<HomePage />}
-          path={RouterPath.Home}
         />
       </Route>
+      <Route
+        element={<NotFoundPage />}
+        path="*"
+      />
     </Routes>
   </BrowserRouter>
 );

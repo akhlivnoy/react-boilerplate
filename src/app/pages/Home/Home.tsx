@@ -1,5 +1,7 @@
+import styles from './Home.module.scss';
+
 export const HomePage: React.ComponentType = () => (
   <div>
-    <p>Home Page</p>
+    <p className={styles.title}>Home Page</p>
   </div>
 );

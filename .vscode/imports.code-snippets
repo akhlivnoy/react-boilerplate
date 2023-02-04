@@ -23,5 +23,10 @@
     "scope": "typescript, typescriptreact",
     "prefix": "ime",
     "body": ["import * as ${2:name} from '${1:module}'"]
+  },
+  "importStyles": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "ims",
+    "body": ["import styles from './${1:$TM_FILENAME_BASE}.module.scss';"]
   }
 }

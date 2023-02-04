@@ -1,6 +1,5 @@
 export const enum RouterPath {
   Root = '/',
-  Home = 'home',
   Posts = 'posts',
   About = 'about',
 }
