@@ -1,0 +1,12 @@
+{
+  "className": {
+    "scope": "typescriptreact",
+    "prefix": "cn",
+    "body": ["className={styles.$0}"]
+  },
+  "multClassNames": {
+    "scope": "typescriptreact",
+    "prefix": "mcn",
+    "body": ["className={classNames($0)}"]
+  }
+}
