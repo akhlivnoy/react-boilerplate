@@ -2,12 +2,12 @@
   "exportAs": {
     "scope": "typescript, typescriptreact",
     "prefix": "exa",
-    "body": ["export { ${2:some} as ${3:name} } from '${1:module}'"]
+    "body": ["export { $2 as ${3:name} } from '${1:module}'"]
   },
   "exportDestructing": {
     "scope": "typescript, typescriptreact",
     "prefix": "exd",
-    "body": ["export { ${2:some} } from '${1:module}'"]
+    "body": ["export { $2 } from '${1:module}'"]
   },
   "exportEverything": {
     "scope": "typescript, typescriptreact",

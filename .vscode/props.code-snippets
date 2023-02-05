@@ -4,7 +4,7 @@
     "prefix": "cn",
     "body": ["className={styles.$0}"]
   },
-  "multClassNames": {
+  "multipleClassNames": {
     "scope": "typescriptreact",
     "prefix": "mcn",
     "body": ["className={classNames($0)}"]
