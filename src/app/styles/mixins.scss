@@ -6,6 +6,10 @@ $breakpoints: (
 );
 
 @mixin mq-min($key: md) {
+  @if not map-has-key($breakpoints, $key) {
+    @error "Size '#{$key}' not found.";
+  }
+
   $size: map-get($breakpoints, $key);
 
   @media (min-width: $size) {
@@ -14,6 +18,10 @@ $breakpoints: (
 }
 
 @mixin mq-max($key: md) {
+  @if not map-has-key($breakpoints, $key) {
+    @error "Size '#{$key}' not found.";
+  }
+
   $size: map-get($breakpoints, $key);
 
   @media (max-width: $size) {
