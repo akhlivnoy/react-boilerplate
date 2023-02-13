@@ -1,0 +1,22 @@
+$breakpoints: (
+  xs: 20rem,
+  sm: 40rem,
+  md: 65rem,
+  lg: 90rem,
+);
+
+@mixin mq-min($key: md) {
+  $size: map-get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin mq-max($key: md) {
+  $size: map-get($breakpoints, $key);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}

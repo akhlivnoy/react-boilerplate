@@ -11,6 +11,8 @@
     "moduleResolution": "Node",
     "noEmit": true,
     "paths": {
+      "styles": ["app/styles"],
+      "styles/*": ["app/styles/*"],
       "#assets": ["app/assets/"],
       "#assets/*": ["app/assets/*"],
       "#components": ["app/components"],
@@ -44,7 +46,10 @@
       {
         "name": "typescript-plugin-css-modules",
         "options": {
-          "classnameTransform": "camelCaseOnly"
+          "classnameTransform": "camelCaseOnly",
+          "rendererOptions": {
+            "sass": {}
+          }
         }
       }
     ]

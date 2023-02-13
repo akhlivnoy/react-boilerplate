@@ -1,26 +1,9 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Layout } from '#components';
-import { HomePage, NotFoundPage } from '#pages';
+import { ROUTES } from './RootRouter.data';
 
-import { RouterPath } from './RootRouter.types';
+export const RootRouter: React.ComponentType = () => {
+  const router = createBrowserRouter(ROUTES);
 
-export const RootRouter: React.ComponentType = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route
-        element={<Layout />}
-        path={RouterPath.Root}
-      >
-        <Route
-          index
-          element={<HomePage />}
-        />
-      </Route>
-      <Route
-        element={<NotFoundPage />}
-        path="*"
-      />
-    </Routes>
-  </BrowserRouter>
-);
+  return <RouterProvider router={router} />;
+};

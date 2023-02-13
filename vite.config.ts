@@ -26,6 +26,7 @@ export default (args: ViteConfig) => {
     },
     resolve: {
       alias: {
+        styles: path.resolve(__dirname, './src/app/styles'),
         '#assets': path.resolve(__dirname, './src/app/assets'),
         '#components': path.resolve(__dirname, './src/app/components'),
         '#constants': path.resolve(__dirname, './src/app/constants'),
@@ -44,6 +45,12 @@ export default (args: ViteConfig) => {
       modules: {
         localsConvention: 'camelCaseOnly',
         generateScopedName,
+      },
+      preprocessorOptions: {
+        scss: {
+          // TODO: uncomment when typescript-plugin-css-modules is fixed
+          // additionalData: "@use 'styles' as *;",
+        },
       },
     },
   });

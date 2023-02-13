@@ -12,5 +12,10 @@
   },
   "files.trimTrailingWhitespace": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}"
+  "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+  "scss.lint.duplicateProperties": "error",
+  "scss.lint.float": "error",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

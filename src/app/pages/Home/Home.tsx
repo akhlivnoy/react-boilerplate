@@ -13,11 +13,12 @@ export const HomePage: React.ComponentType = () => {
 
   return (
     <div className={styles.container}>
+      <p className={styles.title}>Home Page</p>
       <button
         className={classNames(styles.button, isActive && styles.active)}
         onClick={handleActive}
       >
-        class names
+        {isActive ? 'Active' : 'Not active'}
       </button>
     </div>
   );

@@ -1,0 +1,31 @@
+{
+  "useColors": {
+    "scope": "scss",
+    "prefix": "useColors",
+    "body": "@use 'styles/colors';"
+  },
+
+  //* Properties
+  "color": {
+    "scope": "scss",
+    "prefix": "clr",
+    "body": "color: $$1;"
+  },
+  "backgroundColor": {
+    "scope": "scss",
+    "prefix": "bgc",
+    "body": "background-color: $$1;"
+  },
+
+  //* Media Queries
+  "minWidthQuery": {
+    "scope": "scss",
+    "prefix": "mqMin",
+    "body": "@include mq-min(${1|xs,sm,md,lg|}) {\n\t$0\n}"
+  },
+  "maxWidthQuery": {
+    "scope": "scss",
+    "prefix": "mqMax",
+    "body": "@include mq-max(${1|xs,sm,md,lg|}) {\n\t$0\n}"
+  }
+}

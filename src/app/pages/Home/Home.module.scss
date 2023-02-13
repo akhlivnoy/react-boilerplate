@@ -1,18 +1,31 @@
+@use 'styles' as *;
+
 .container {
   height: 100vh;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: $primary;
 }
 
 .button {
   padding: 0.5em;
-  border-radius: 0.3em;
+  width: 100%;
+  max-width: 25rem;
 
   font-size: 3rem;
-}
 
-.active {
-  text-decoration: underline;
-  font-weight: 700;
+  border-radius: 0.3em;
+
+  &.active {
+    text-decoration: underline;
+    font-weight: 700;
+  }
 }

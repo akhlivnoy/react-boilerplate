@@ -2,17 +2,18 @@ import _ from 'lodash';
 
 import { classNamesArgs } from '#types/classNamesArgs';
 
+// TODO: rename with shorter name, e.g. 'cn'
 export const classNames = (...args: classNamesArgs) => {
   const classes: string[] = [];
 
-  _.map(args, argsItem => {
-    if (argsItem) {
-      switch (typeof argsItem) {
+  _.map(args, arg => {
+    if (arg) {
+      switch (typeof arg) {
         case 'string':
-          classes.push(argsItem);
+          classes.push(arg);
           break;
         case 'object':
-          _(argsItem)
+          _(arg)
             .entries()
             .map(prop => {
               if (prop[1]) {

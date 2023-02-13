@@ -1,11 +1,3 @@
-import { NavLink } from 'react-router-dom';
+import styles from './MainHeader.module.scss';
 
-import { RouterPath } from '#navigation';
-
-export const MainHeader: React.ComponentType = () => (
-  <header>
-    <NavLink to={RouterPath.Root}>Home</NavLink>
-    <NavLink to={RouterPath.Posts}>Posts</NavLink>
-    <NavLink to={RouterPath.About}>About</NavLink>
-  </header>
-);
+export const MainHeader: React.ComponentType = () => <header className={styles.container} />;
