@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { RootRouter } from '#navigation';
+import { Router } from '#navigation';
 
 export const App: React.ComponentType = () => (
   <React.StrictMode>
-    <RootRouter />
+    <Router />
   </React.StrictMode>
 );

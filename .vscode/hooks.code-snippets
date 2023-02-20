@@ -22,5 +22,11 @@
     "prefix": "useMemo",
     "body": "const ${1:name} = useMemo$2(() => {\t\n$0\n}, []);",
     "description": "Hook useMemo"
+  },
+  "useLocation": {
+    "scope": "typescriptreact",
+    "prefix": "useLocation",
+    "body": "const location = useLocation$2();",
+    "description": "Hook useLocation"
   }
 }

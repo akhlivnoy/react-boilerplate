@@ -1,18 +1,19 @@
-import { RouterPath } from '#navigation/RootRouter/RootRouter.types';
+import { Paths } from '#navigation/routes';
 
 import { ILink } from './MainHeader.types';
 
 export const LINKS: ReadonlyArray<ILink> = [
   {
     title: 'Home',
-    path: RouterPath.Root,
+    path: Paths.Root,
   },
   {
     title: 'Login',
-    path: RouterPath.Login,
+    path: Paths.Login,
   },
   {
     title: 'Posts',
-    path: RouterPath.Posts,
+    path: Paths.Posts,
+    private: true,
   },
 ];

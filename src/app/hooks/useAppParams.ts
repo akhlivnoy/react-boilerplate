@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
 
-import { RouterParams } from '#navigation';
+import { Params } from '#navigation/routes';
 
-export const useAppParams = () => useParams<RouterParams>();
+export const useAppParams = () => useParams<Params>();
