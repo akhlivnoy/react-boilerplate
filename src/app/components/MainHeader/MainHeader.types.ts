@@ -1,4 +1,4 @@
-export interface ILinkItem {
-  to: string;
+export interface ILink {
+  path: string;
   title: string;
 }

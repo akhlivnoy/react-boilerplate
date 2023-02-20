@@ -7,7 +7,7 @@
   "importDestructing": {
     "scope": "typescript, typescriptreact",
     "prefix": "imd",
-    "body": "import { $2} } from '${1:module}'"
+    "body": "import { $2 } from '${1:module}'"
   },
   "importReact": {
     "scope": "typescript, typescriptreact",

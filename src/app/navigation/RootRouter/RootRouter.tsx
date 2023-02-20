@@ -1,15 +1,17 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 
-import { Layout } from '#components';
-import { HomePage } from '#pages';
+import { Layout, RequireAuth } from '#components';
+import { HomePage, NotFoundPage, PostPage } from '#pages';
+import { rp } from '#utils/routeParam';
 
-import { RouterPath } from './RootRouter.types';
+import { RouterParams, RouterPath } from './RootRouter.types';
 
 export const RootRouter: React.ComponentType = () => (
   <BrowserRouter>
     <Routes>
       <Route
         element={<Layout />}
+        errorElement={<NotFoundPage />}
         path={RouterPath.Root}
       >
         <Route
@@ -21,14 +23,26 @@ export const RootRouter: React.ComponentType = () => (
           path={RouterPath.Login}
         />
         <Route
-          element={<div>Dashboard</div>}
-          path={RouterPath.Dashboard}
-        />
-        <Route
-          element={<div>Settings</div>}
-          path={RouterPath.Settings}
-        />
+          element={
+            <RequireAuth>
+              <div>
+                <div>Posts</div>
+                <Outlet />
+              </div>
+            </RequireAuth>
+          }
+          path={RouterPath.Posts}
+        >
+          <Route
+            element={<PostPage />}
+            path={rp(RouterParams.PostId)}
+          />
+        </Route>
       </Route>
+      <Route
+        element={<NotFoundPage />}
+        path="*"
+      />
     </Routes>
   </BrowserRouter>
 );

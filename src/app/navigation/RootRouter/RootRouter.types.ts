@@ -1,6 +1,9 @@
 export enum RouterPath {
   Root = '/',
   Login = 'login',
-  Dashboard = 'dashboard',
-  Settings = 'settings',
+  Posts = 'posts',
+}
+
+export enum RouterParams {
+  PostId = 'postId',
 }

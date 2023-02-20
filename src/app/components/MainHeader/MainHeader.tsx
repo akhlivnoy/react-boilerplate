@@ -1,46 +1,24 @@
+import _ from 'lodash';
 import { NavLink } from 'react-router-dom';
 
-import { RouterPath } from '#navigation/RootRouter/RootRouter.types';
 import { classNames } from '#utils/classNames';
 
+import { LINKS } from './MainHeader.data';
 import styles from './MainHeader.module.scss';
 
-export const MainHeader: React.ComponentType = () => {
-  const linkStyles = ({ isActive }: { isActive: boolean; isPending: boolean }) =>
-    classNames(styles.link, isActive && styles.linkActive);
-
-  return (
-    <header className={styles.header}>
-      <h3 className={styles.title}>Beyond Codeline</h3>
-      <nav className={styles.links}>
+export const MainHeader: React.ComponentType = () => (
+  <header className={styles.header}>
+    <h3 className={styles.title}>Beyond Codeline</h3>
+    <nav className={styles.links}>
+      {_.map(LINKS, link => (
         <NavLink
-          className={linkStyles}
-          to={RouterPath.Root}
+          className={({ isActive }) => classNames(styles.link, isActive && styles.linkActive)}
+          key={link.path}
+          to={link.path}
         >
-          Home
+          {link.title}
         </NavLink>
-
-        <NavLink
-          className={linkStyles}
-          to={RouterPath.Login}
-        >
-          Login
-        </NavLink>
-
-        <NavLink
-          className={linkStyles}
-          to={RouterPath.Dashboard}
-        >
-          Dashboard
-        </NavLink>
-
-        <NavLink
-          className={linkStyles}
-          to={RouterPath.Settings}
-        >
-          Settings
-        </NavLink>
-      </nav>
-    </header>
-  );
-};
+      ))}
+    </nav>
+  </header>
+);

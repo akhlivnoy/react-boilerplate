@@ -1,10 +1,4 @@
 {
-  "useStyles": {
-    "scope": "scss",
-    "prefix": "useStyles",
-    "body": "@use 'styles' as *;"
-  },
-
   //* Properties
   "color": {
     "scope": "scss",

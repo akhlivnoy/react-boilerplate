@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 import { classNamesArgs } from '#types/classNamesArgs';
 
-// TODO: rename with shorter name, e.g. 'cn'
 export const classNames = (...args: classNamesArgs) => {
   const classes: string[] = [];
 
