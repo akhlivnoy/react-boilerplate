@@ -5,14 +5,13 @@ import { Paths } from '#navigation/routes';
 import { ILoginState } from '#pages';
 
 export const RequireAuth: React.ComponentType<{ children: JSX.Element }> = ({ children }) => {
-  const { name, password } = useAppSelector(state => state.user);
-  const isAuthorized = !!(name && password);
+  const { user } = useAppSelector(state => state.user);
   const location = useLocation();
   const state: ILoginState = {
     from: location,
   };
 
-  return isAuthorized ? (
+  return user?.token ? (
     children
   ) : (
     <Navigate

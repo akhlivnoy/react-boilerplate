@@ -1,4 +1,7 @@
+import { ApiResponse } from 'apisauce';
+
 import { IPost } from '#models';
+import { ErrorResponse } from '#types/api';
 
 export type ApiGetPostsSuccessResponse = {
   posts: IPost[];
@@ -6,3 +9,5 @@ export type ApiGetPostsSuccessResponse = {
   skip: number;
   limit: number;
 };
+
+export type ApiGetPostsResponse = ApiResponse<ApiGetPostsSuccessResponse, ErrorResponse>;

@@ -4,12 +4,17 @@ import { IPost } from '#models';
 import { postsSlice } from '#redux/slices';
 import { GetPostsAction } from '#redux/types';
 import { apiInstance } from '#services/api';
-import { ApiGetPostsSuccessResponse } from '#services/api/types';
+import { ApiGetPostsResponse } from '#services/api/types';
 
 function* getPostsWorker({ payload: { limit } }: GetPostsAction) {
-  const response: ApiGetPostsSuccessResponse = yield call(apiInstance.posts.getPosts, limit);
+  const response: ApiGetPostsResponse = yield call(apiInstance.posts.getPosts, limit);
 
-  yield put(postsSlice.actions.getPostsSuccess(response.posts));
+  if (response.ok && response.data) {
+    yield put(postsSlice.actions.getPostsSuccess(response.data.posts));
+  } else {
+    // TODO: error from backend side
+    yield put(postsSlice.actions.getPostsError('Login error'));
+  }
 }
 
 export function* postsSaga() {

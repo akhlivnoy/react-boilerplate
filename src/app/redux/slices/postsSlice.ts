@@ -3,6 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IPost } from '#models';
 import { GetPostsAction } from '#redux/types';
 
+import { userSlice } from './userSlice';
+
 export interface IPostsState {
   posts: IPost[];
 }
@@ -22,5 +24,10 @@ export const postsSlice = createSlice({
     },
 
     getPostsError(state, action: PayloadAction<string>) {},
+  },
+  extraReducers: builder => {
+    builder.addCase(userSlice.actions.logout, state => {
+      state.posts = [];
+    });
   },
 });

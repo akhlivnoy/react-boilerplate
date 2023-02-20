@@ -1,10 +1,12 @@
+import { ErrorResponse } from '#types/api';
+
+import { apiClient } from '.';
 import { ApiGetPostsSuccessResponse } from './types';
 
-const getPosts = async (limit: number) => {
-  const response: ApiGetPostsSuccessResponse = await (await fetch(`https://dummyjson.com/posts?limit=${limit}`)).json();
-
-  return response;
-};
+const getPosts = async (limit: number) =>
+  apiClient.get<ApiGetPostsSuccessResponse, ErrorResponse>('https://dummyjson.com/posts', {
+    limit,
+  });
 
 export const postsApi = {
   getPosts,

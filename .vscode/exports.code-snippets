@@ -23,5 +23,15 @@
     "scope": "typescript, typescriptreact",
     "prefix": "exen",
     "body": "export enum ${1:EnumName} {\n\t$0\n}"
+  },
+  "exportConst": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exc",
+    "body": "export const ${1/(.*)/${1:/upcase}/} = $0;"
+  },
+  "exportInterface": {
+    "scope": "typescript, typescriptreact",
+    "prefix": "exi",
+    "body": "export interface I${1/(.*)/${1:/capitalize}/} {\n\t$0\n}"
   }
 }

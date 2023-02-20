@@ -12,14 +12,14 @@ export const PostsPage: React.ComponentType = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!posts.length) {
-      dispatch(postsSlice.actions.getPosts({ limit: 5 }));
+    if (!posts?.length) {
+      dispatch(postsSlice.actions.getPosts({ limit: 20 }));
     }
-  }, [dispatch, posts.length]);
+  }, [dispatch, posts?.length]);
 
   return (
     <div>
-      {posts.length ? (
+      {posts?.length ? (
         _.map(posts, post => (
           <Link
             className={styles.link}
