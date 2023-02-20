@@ -1,31 +1,37 @@
 import _ from 'lodash';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { IPost } from '#models';
+import { useAppDispatch, useAppSelector } from '#hooks';
+import { postsSlice } from '#redux/slices';
 
 import styles from './Posts.module.scss';
 
 export const PostsPage: React.ComponentType = () => {
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const { posts } = useAppSelector(state => state.posts);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
-      .then(data => setPosts(data));
-  }, []);
+    if (!posts.length) {
+      dispatch(postsSlice.actions.getPosts({ limit: 5 }));
+    }
+  }, [dispatch, posts.length]);
 
   return (
     <div>
-      {_.map(posts, post => (
-        <Link
-          className={styles.link}
-          key={post.id}
-          to={`${post.id}`}
-        >
-          {post.id}. {post.title}
-        </Link>
-      ))}
+      {posts.length ? (
+        _.map(posts, post => (
+          <Link
+            className={styles.link}
+            key={post.id}
+            to={`${post.id}`}
+          >
+            {post.id}. {post.title}
+          </Link>
+        ))
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 };

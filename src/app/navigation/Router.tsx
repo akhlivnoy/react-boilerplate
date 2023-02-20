@@ -1,12 +1,15 @@
+/* eslint-disable react/no-multi-comp */
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout, RequireAuth } from '#components';
 import { HomePage, LoginPage, NotFoundPage, PostPage, PostsPage } from '#pages';
+import { NavigatorSetter } from '#services/navigator';
 
 import { Params, Paths } from './routes';
 
 export const Router: React.ComponentType = () => (
   <BrowserRouter>
+    <NavigatorSetter />
     <Routes>
       <Route
         element={<Layout />}
