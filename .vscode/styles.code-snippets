@@ -43,5 +43,12 @@
     "scope": "scss",
     "prefix": "mqMax",
     "body": "@include mq-max(${1|xs,sm,md,lg|}) {\n\t$0\n}"
+  },
+
+  //* Mixins
+  "adaptiveProperty": {
+    "scope": "scss",
+    "prefix": "adProp",
+    "body": "@include adaptive-property(${1:property}, ${2:startSize}, ${3:minSize});"
   }
 }

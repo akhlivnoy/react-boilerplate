@@ -5,7 +5,7 @@ import { userSlice } from '#redux/slices';
 import { GetUserListAction, LoginUserAction } from '#redux/types';
 import { apiInstance } from '#services/api';
 import { ApiGetUserListResponse, ApiLoginUserBody, ApiLoginUserResponse } from '#services/api/types';
-import { Navigator } from '#services/navigator';
+import { StaticNavigator } from '#services/navigator';
 
 function* loginUserWorker({ payload: { password, username } }: LoginUserAction) {
   const body: ApiLoginUserBody = {
@@ -17,7 +17,7 @@ function* loginUserWorker({ payload: { password, username } }: LoginUserAction) 
   if (response.ok && response.data) {
     yield put(userSlice.actions.loginUserSuccess(response.data));
 
-    Navigator.navigate(Paths.Posts);
+    StaticNavigator.navigate(Paths.Posts);
   } else {
     // TODO: error from backend side
     yield put(userSlice.actions.loginUserError('Login error'));

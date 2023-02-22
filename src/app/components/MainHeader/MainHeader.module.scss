@@ -9,7 +9,7 @@
 
 .title {
   text-align: center;
-  font-size: 2.5rem;
+  @include adaptive-property(font-size, 2.5rem, 1.6rem);
   font-family: $font-rubik-mono-one;
   color: $grey;
 

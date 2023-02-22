@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 import { useAppParams, useAppSelector } from '#hooks';
 import { IPost } from '#models';
 import { Paths } from '#navigation/routes';
-import { Navigator } from '#services/navigator';
+import { StaticNavigator } from '#services/navigator';
 import { Nullable } from '#types/nullable';
+
+import styles from './Post.module.scss';
 
 export const PostPage: React.ComponentType = () => {
   const { postId } = useAppParams();
@@ -19,15 +21,15 @@ export const PostPage: React.ComponentType = () => {
     if (tempPost) {
       setPost(tempPost);
     } else {
-      Navigator.navigate(Paths.Posts);
+      StaticNavigator.navigate(Paths.Posts);
     }
   }, [postId, posts]);
 
   return (
     post && (
-      <div>
-        <h1>{post.title}</h1>
-        <p>{post.body}</p>
+      <div className={styles.container}>
+        <h1 className={styles.title}>{post.title}</h1>
+        <p className={styles.description}>{post.body}</p>
       </div>
     )
   );

@@ -2,7 +2,7 @@ import { NavigateFunction, NavigateOptions, To, useNavigate } from 'react-router
 
 import { Nullable } from '#types/nullable';
 
-export class Navigator {
+export class StaticNavigator {
   static navigator: Nullable<NavigateFunction> = null;
 
   static navigate(to: To | number, options?: NavigateOptions) {
@@ -17,7 +17,7 @@ export class Navigator {
 }
 
 export const NavigatorSetter = () => {
-  Navigator.navigator = useNavigate();
+  StaticNavigator.navigator = useNavigate();
 
   return null;
 };

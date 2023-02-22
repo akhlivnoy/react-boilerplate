@@ -2,6 +2,7 @@ import _ from 'lodash';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { LoadingDots } from '#components';
 import { useAppDispatch, useAppSelector } from '#hooks';
 import { postsSlice } from '#redux/slices';
 
@@ -13,12 +14,12 @@ export const PostsPage: React.ComponentType = () => {
 
   useEffect(() => {
     if (!posts?.length) {
-      dispatch(postsSlice.actions.getPosts({ limit: 20 }));
+      dispatch(postsSlice.actions.getPosts({ limit: 25 }));
     }
   }, [dispatch, posts?.length]);
 
   return (
-    <div>
+    <div className={styles.container}>
       {posts?.length ? (
         _.map(posts, post => (
           <Link
@@ -30,7 +31,7 @@ export const PostsPage: React.ComponentType = () => {
           </Link>
         ))
       ) : (
-        <div>Loading...</div>
+        <LoadingDots className={styles.loadingDots} />
       )}
     </div>
   );
