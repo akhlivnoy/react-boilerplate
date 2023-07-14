@@ -9,7 +9,7 @@
 }
 
 .description {
-  max-width: $rootMaxWidth / 2;
+  max-width: calc($rootMaxWidth / 2);
   margin-top: 2rem;
 
   @include adaptive-property(font-size, 1.3rem, 1rem);
