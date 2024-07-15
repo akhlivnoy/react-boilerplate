@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { UserList } from '#components';
 import { useAppDispatch, useAppSelector } from '#hooks';
 import { userSlice } from '#redux/slices';
+import i18n from '#services/localization';
 import { classNames } from '#utils/classNames';
 
 import styles from './Login.module.scss';
@@ -51,9 +52,7 @@ export const LoginPage: React.ComponentType = () => {
       {user?.token ? (
         <>
           <div className={styles.userInfo}>
-            <h2>
-              Hello, {user.firstName} {user.lastName}
-            </h2>
+            <h2>{i18n.t('pages.home.hello_user', { name: `${user.firstName} ${user.lastName}` })}</h2>
             <img
               alt="avatar"
               className={styles.image}
@@ -64,7 +63,7 @@ export const LoginPage: React.ComponentType = () => {
             className={classNames(styles.input, styles.button)}
             onClick={handleLogout}
           >
-            Logout
+            {i18n.t('buttons.logout')}
           </button>
         </>
       ) : (
@@ -92,9 +91,9 @@ export const LoginPage: React.ComponentType = () => {
             className={classNames(styles.input, styles.button)}
             onClick={handleLogin}
           >
-            Login
+            {i18n.t('buttons.login')}
           </button>
-          {errors.loginUser && <p className={styles.error}>The username or password you entered is incorrect</p>}
+          {errors.loginUser && <p className={styles.error}>{i18n.t('errors.login')}</p>}
         </>
       )}
     </div>

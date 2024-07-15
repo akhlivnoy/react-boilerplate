@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Generate localization types",
+      "type": "shell",
+      "command": "yarn localization-types",
+      "presentation": {
+        "echo": false,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ],
+}

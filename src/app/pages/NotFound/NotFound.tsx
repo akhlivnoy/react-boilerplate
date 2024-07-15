@@ -1,6 +1,7 @@
 import { LoadingDots } from '#components';
 import { useMount } from '#hooks';
 import { Paths } from '#navigation/routes';
+import i18n from '#services/localization';
 import { StaticNavigator } from '#services/navigator';
 
 import styles from './NotFound.module.scss';
@@ -14,9 +15,9 @@ export const NotFoundPage: React.ComponentType = () => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.title}>This page doesn&apos;t exist.</p>
+      <p className={styles.title}>{i18n.t('labels.page_not_exist')}</p>
       <p className={styles.loading}>
-        Redirecting to the homepage
+        {i18n.t('labels.redirect_to_homepage')}
         <LoadingDots className={styles.loadingDots} />
       </p>
     </div>

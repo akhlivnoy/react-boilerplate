@@ -1,4 +1,5 @@
 import './index.scss';
+import './app/services/localization/index';
 
 import ReactDOM from 'react-dom/client';
 

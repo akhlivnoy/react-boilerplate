@@ -68,7 +68,7 @@
       {
         "custom": {
           "match": true,
-          "regex": "^I[A-Z]"
+          "regex": "^[A-Z]"
         },
         "format": ["PascalCase"],
         "selector": "interface"
